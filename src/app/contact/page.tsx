@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ContactForm } from "@/components/contact-form";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -14,7 +14,7 @@ export default function Contact() {
           <SectionHeader
             label="Contact Us"
             title="Let's start the conversation."
-            description="Whether you have a specific project in mind or just want to learn more about how we work, we'd love to hear from you."
+            description="We serve clients worldwide. Whether you have a specific project in mind or just want to learn more about how we work, we'd love to hear from you."
             light
           />
         </div>
@@ -28,48 +28,29 @@ export default function Contact() {
               <ContactForm />
             </div>
 
-            <div className="bg-secondary p-6 sm:p-8 md:p-10 space-y-8 md:space-y-10">
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-primary">Our Offices</h3>
-
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="mt-1 bg-white p-2 h-10 w-10 flex items-center justify-center border border-border">
-                    <MapPin className="h-5 w-5 text-accent" />
+            <div className="relative border border-border bg-white p-6 sm:p-8 md:p-10 shadow-sm overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" aria-hidden />
+              <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Contact</p>
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-4">Get in touch</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Reach us by email or phone; we&apos;ll respond within one business day.
+              </p>
+              <p className="text-muted-foreground text-sm mt-2">
+                For international clients, please email first—we&apos;ll schedule a toll-free call.
+              </p>
+              <div className="mt-6 pt-6 border-t border-border space-y-4">
+                <a href="mailto:inquiries@ironvael.com" className="flex items-center gap-4 group">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <Mail className="h-5 w-5" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-primary">New York (HQ)</h4>
-                    <p className="text-muted-foreground">
-                      10 Hudson Yards, Suite 3400<br />
-                      New York, NY 10001<br />
-                      United States
-                    </p>
+                  <span className="text-primary font-medium group-hover:underline">inquiries@ironvael.com</span>
+                </a>
+                <a href="tel:+14062194294" className="flex items-center gap-4 group">
+                  <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <Phone className="h-5 w-5" />
                   </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="mt-1 bg-white p-2 h-10 w-10 flex items-center justify-center border border-border">
-                    <MapPin className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-primary">London</h4>
-                    <p className="text-muted-foreground">
-                      25 Canada Square<br />
-                      Canary Wharf, London E14 5LQ<br />
-                      United Kingdom
-                    </p>
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-border/50 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 text-accent" />
-                    <span className="text-primary font-medium">+1 (212) 555-0123</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 text-accent" />
-                    <span className="text-primary font-medium">inquiries@ironvael.com</span>
-                  </div>
-                </div>
+                  <span className="text-primary font-medium group-hover:underline">(406) 219-4294</span>
+                </a>
               </div>
             </div>
           </div>

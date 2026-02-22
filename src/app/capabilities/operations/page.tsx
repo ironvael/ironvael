@@ -40,63 +40,63 @@ const CAPABILITIES_ACCORDION = [
   {
     title: "Supply chain design",
     bullets: [
-      "Network optimization and facility footprint",
-      "Flow design for cost and service",
-      "Make vs buy and outsourcing review",
+      "Network and facility footprint: where to make, hold, and move product",
+      "Flow design that balances cost and service",
+      "Make vs buy and outsourcing so you know what to own",
     ],
     deliverable: "Supply chain and network analysis memo",
   },
   {
     title: "Procurement & sourcing",
     bullets: [
-      "Strategic sourcing and supplier segmentation",
-      "Spend analytics and opportunity identification",
-      "Category strategy and RFx support",
+      "Strategic sourcing and supplier segmentation so spend is intentional",
+      "Spend analytics and opportunity sizing",
+      "Category strategy and RFx support when you’re ready to run a process",
     ],
     deliverable: "Sourcing and supplier strategy document",
   },
   {
     title: "Inventory management",
     bullets: [
-      "Safety stock and reorder policy design",
+      "Safety stock and reorder policies that match how you actually sell",
       "Inventory health by channel and SKU",
-      "Working capital and service level tradeoffs",
+      "Working capital vs service level tradeoffs, spelled out",
     ],
     deliverable: "Inventory and policy recommendations",
   },
   {
     title: "Logistics & distribution",
     bullets: [
-      "Transport mode and routing review",
-      "Warehouse operations and layout",
-      "Last-mile and delivery options",
+      "Transport mode and routing: what to move, how, and at what cost",
+      "Warehouse operations and layout for throughput and accuracy",
+      "Last-mile and delivery options that fit your customer promise",
     ],
     deliverable: "Logistics and distribution assessment",
   },
   {
     title: "Manufacturing & production",
     bullets: [
-      "Lean operations and throughput",
-      "Capacity planning and bottlenecks",
-      "Quality and consistency improvement",
+      "Lean ops and throughput: where the bottlenecks really are",
+      "Capacity planning so you know when you’ll run out of room",
+      "Quality and consistency so output is predictable",
     ],
     deliverable: "Manufacturing improvement plan",
   },
   {
     title: "Process & workflow",
     bullets: [
-      "Process mapping and handoff discipline",
+      "Process mapping and handoff discipline so work doesn’t fall through cracks",
       "Bottleneck and delay identification",
-      "Cross-functional workflow design",
+      "Cross-functional workflow so teams know who does what",
     ],
     deliverable: "Process maps and workflow documentation",
   },
   {
     title: "Performance & metrics",
     bullets: [
-      "KPI and dashboard design",
-      "Accountability and ownership structure",
-      "Variance and exception management",
+      "KPI and dashboard design so you see the right numbers",
+      "Accountability: who owns what outcome",
+      "Variance and exception management so issues get acted on",
     ],
     deliverable: "KPI framework and dashboard design",
   },
@@ -105,42 +105,42 @@ const CAPABILITIES_ACCORDION = [
     bullets: [
       "Supplier diversification and single-point-of-failure review",
       "Scenario planning and continuity readiness",
-      "Risk register and mitigation actions",
+      "Risk register and mitigation so you’re not caught off guard",
     ],
     deliverable: "Resilience and risk assessment",
   },
   {
     title: "Cost & efficiency",
     bullets: [
-      "Cost driver and variance analysis",
-      "Sustainable cost reduction (not one-time cuts)",
-      "Efficiency by function and process",
+      "Cost driver and variance analysis so you know why numbers move",
+      "Sustainable cost reduction—not one-time cuts that bounce back",
+      "Efficiency by function and process with clear ownership",
     ],
     deliverable: "Cost and efficiency analysis",
   },
   {
     title: "Implementation support",
     bullets: [
-      "Rollout planning and sequencing",
-      "Change management and communication",
-      "Capability transfer and training",
+      "Rollout planning and sequencing so change happens in order",
+      "Change management and communication so the org comes along",
+      "Capability transfer and training so your team can own it",
     ],
     deliverable: "Implementation and handoff plan",
   },
 ];
 
 const PROCESS_STEPS = [
-  { num: "01", title: "Discovery & scope", desc: "We align on objectives, constraints, and success criteria and confirm scope and deliverables.", id: "process-step-1" },
-  { num: "02", title: "Analysis & design", desc: "We gather data, map processes, and develop recommendations with assumptions documented.", id: "process-step-2" },
-  { num: "03", title: "Review & refine", desc: "We socialize findings with your team and adjust based on feedback and constraints.", id: "process-step-3" },
-  { num: "04", title: "Deliver & handoff", desc: "We deliver final work product and support implementation or capability transfer.", id: "process-step-4" },
+  { num: "01", title: "Discovery & scope", desc: "We align on objectives, constraints, and success criteria and lock scope and deliverables so everyone knows what’s in and out.", id: "process-step-1" },
+  { num: "02", title: "Analysis & design", desc: "We gather data, map processes, and develop recommendations with assumptions written down—no black boxes.", id: "process-step-2" },
+  { num: "03", title: "Review & refine", desc: "We socialize findings with your team and adjust for feedback and constraints before locking the answer.", id: "process-step-3" },
+  { num: "04", title: "Deliver & handoff", desc: "We deliver the work product and support implementation or capability transfer so your team can run with it.", id: "process-step-4" },
 ];
 
 const OPERATING_SYSTEM_PILLARS = [
-  { title: "Visibility", body: "You cannot improve what you do not measure. We build clarity on cost, performance, and risk so decisions are grounded in fact." },
+  { title: "Visibility", body: "You can’t improve what you don’t measure. We build clarity on cost, performance, and risk so decisions are grounded in fact." },
   { title: "Accountability", body: "Clear ownership by role and process. No gray zones—every outcome ties to someone who can act." },
-  { title: "Discipline", body: "Routines, handoffs, and governance that reduce firefighting and make execution consistent." },
-  { title: "Improvement", body: "Continuous learning and iteration. We equip your team to own the next cycle of change." },
+  { title: "Discipline", body: "Routines, handoffs, and governance that cut firefighting and make execution repeatable." },
+  { title: "Improvement", body: "We equip your team to run the next cycle of change so you’re not dependent on us forever." },
 ];
 
 function LeadFormCard({ idPrefix = "" }: { idPrefix?: string }) {
@@ -275,7 +275,7 @@ export default function OperationsPage() {
             Operations
           </h1>
           <p className="mt-4 text-base sm:text-lg text-white/90 max-w-2xl leading-relaxed w-full">
-            We transform operational performance through rigorous analysis, disciplined execution, and enterprise-grade solutions that deliver lasting results.
+            Supply chain, procurement, manufacturing, and process—we help you see where you stand, fix what’s broken, and build an operating model that scales without the chaos.
           </p>
         </div>
       </section>
@@ -334,17 +334,17 @@ export default function OperationsPage() {
         <div className="container-padding">
           <div className="max-w-2xl">
             <SectionHeader
-              label="Quick lens"
-              title="Operations Snapshot"
+              label="Diagnostic"
+              title="Where operations stand"
               id="snapshot-heading"
-              description="A simple diagnostic view of where operations stand. We use this lens in early conversations to focus on the areas that matter most."
+              description="We use a short set of dimensions in early conversations to pinpoint where to focus—process, data, cost, resilience, scale—so we don’t boil the ocean."
             />
           </div>
           <Card className="mt-10 rounded-none border border-border max-w-2xl">
             <CardHeader>
-              <CardTitle className="text-lg font-serif">Snapshot categories</CardTitle>
+              <CardTitle className="text-lg font-serif">Dimensions we look at</CardTitle>
               <p className="text-sm text-muted-foreground font-normal">
-                Rate each dimension to see where to focus. This is illustrative—we tailor the actual diagnostic to your context.
+                Example dimensions; we adapt the real diagnostic to your business. Scores are illustrative.
               </p>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -377,33 +377,33 @@ export default function OperationsPage() {
         <div className="container-padding">
           <SectionHeader
             label="Why it matters"
-            title="Operations gaps compound."
+            title="Gaps in operations don’t stay small."
             id="why-heading"
-            description="Unaddressed, they drive cost, risk, and missed growth."
+            description="They drive cost, risk, and missed growth—until someone fixes the system."
           />
           <div className="grid md:grid-cols-3 gap-8 md:gap-10 mt-12">
             <div className="p-6 border border-border bg-background">
               <h3 className="text-xl font-serif font-semibold text-primary mb-3">
-                Reactive leadership
+                Stuck in the weeds
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                When operations run on firefighting and tribal knowledge, leadership spends time on execution instead of strategy. Priorities slip and decisions lag.
+                When ops run on firefighting and tribal knowledge, leadership can’t get out of execution mode. Strategy slips; decisions lag.
               </p>
             </div>
             <div className="p-6 border border-border bg-background">
               <h3 className="text-xl font-serif font-semibold text-primary mb-3">
-                No visibility
+                Flying blind
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Without clear metrics, processes, and accountability, cost and performance stay opaque. You cannot improve what you do not measure.
+                No clear metrics, process ownership, or cost visibility. You can’t improve what you don’t measure—and surprises show up late.
               </p>
             </div>
             <div className="p-6 border border-border bg-background">
               <h3 className="text-xl font-serif font-semibold text-primary mb-3">
-                Growth strain
+                Scale without a playbook
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Scaling on top of ad-hoc systems creates bottlenecks, quality issues, and rising cost. What worked at one size fails at the next.
+                Growth on top of ad-hoc systems means more bottlenecks, quality issues, and cost. What worked at one size breaks at the next.
               </p>
             </div>
           </div>
@@ -419,9 +419,9 @@ export default function OperationsPage() {
         <div className="container-padding">
           <SectionHeader
             label="What we do"
-            title="Specific capabilities."
+            title="Concrete areas we work in."
             id="what-heading"
-            description="We focus on advisory, design, and implementation support—not ongoing execution or outsourcing."
+            description="Advisory, design, and implementation support—we don’t run your operations day to day or take over execution."
           />
           <Accordion type="single" collapsible className="mt-12 max-w-3xl">
             {CAPABILITIES_ACCORDION.map((cap, i) => (
@@ -455,14 +455,14 @@ export default function OperationsPage() {
         <div className="container-padding">
           <SectionHeader
             label="Outcomes"
-            title="What you can expect."
+            title="What you get."
             id="outcomes-heading"
           />
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12">
             {[
-              { title: "Clarity", body: "A clear view of how operations support strategy, where cost and risk sit, and what to fix first." },
-              { title: "Control", body: "Processes, metrics, and accountability that reduce firefighting and support consistent execution." },
-              { title: "Scalability", body: "Operating design that can grow with you—without reinventing the playbook at each stage." },
+              { title: "Clarity", body: "You know how ops support strategy, where cost and risk sit, and what to fix first—no more guessing." },
+              { title: "Control", body: "Processes, metrics, and clear ownership so firefighting drops and execution is consistent." },
+              { title: "Scalability", body: "An operating model and playbooks that scale so you don’t reinvent the wheel at every growth stage." },
             ].map((item, i) => (
               <Card key={i} className="rounded-none border border-border">
                 <CardHeader>
@@ -483,10 +483,10 @@ export default function OperationsPage() {
       <section className="py-12 sm:py-16 bg-primary text-white">
         <div className="container-padding text-center max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-serif font-medium mb-4">
-            Ready to strengthen your operations?
+            Ready to fix what’s broken and scale without the chaos?
           </h2>
           <p className="text-white/80 mb-6">
-            Start with a no-obligation conversation about your priorities and options.
+            One call to align on priorities and options—no obligation.
           </p>
           <Link href="/contact" className="min-h-[44px] inline-flex items-center">
             <Button
@@ -510,26 +510,26 @@ export default function OperationsPage() {
             label="Engagement models"
             title="How we work with you."
             id="engagement-heading"
-            description="We match the engagement to the problem."
+            description="We fit the engagement to the problem—not the other way around."
           />
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12">
             {[
               {
                 title: "Project-based",
-                bestFor: "Discrete initiatives: supply chain redesign, procurement program, process or facility improvement.",
-                whatYouGet: "Scoped deliverables, milestones, and handoff to your team.",
+                bestFor: "One-off initiatives: supply chain redesign, procurement program, process or facility improvement.",
+                whatYouGet: "Scoped deliverables, clear milestones, and handoff to your team.",
                 timeline: "Weeks to a few months.",
               },
               {
                 title: "Retainer",
-                bestFor: "Ongoing support: quarterly reviews, ad-hoc analysis, and implementation guidance.",
-                whatYouGet: "Dedicated capacity and continuity across initiatives.",
-                timeline: "Ongoing; typically 6–12 month initial commitment.",
+                bestFor: "Ongoing support: quarterly reviews, ad-hoc analysis, implementation guidance.",
+                whatYouGet: "Dedicated capacity and one team across multiple initiatives.",
+                timeline: "Ongoing; usually 6–12 month initial commitment.",
               },
               {
                 title: "Operating partner",
-                bestFor: "Deep integration: operations embedded in strategy and execution rhythm.",
-                whatYouGet: "Seat at the table for major decisions, ownership of key initiatives, and capability transfer.",
+                bestFor: "Deep integration: ops in the room for strategy and execution rhythm.",
+                whatYouGet: "Seat at the table on major decisions, ownership of key initiatives, and real capability transfer.",
                 timeline: "Ongoing; multi-quarter or multi-year.",
               },
             ].map((item, i) => (
@@ -568,7 +568,7 @@ export default function OperationsPage() {
             label="Process"
             title="How engagements run."
             id="process-heading"
-            description="Structured, with clear milestones and handoffs."
+            description="Four phases, clear milestones, no surprises."
           />
           {/* Step selector */}
           <div className="flex flex-wrap gap-2 mt-10 mb-10" role="tablist" aria-label="Process steps">
@@ -630,24 +630,24 @@ export default function OperationsPage() {
       >
         <div className="container-padding">
           <SectionHeader
-            label="Transformation"
+            label="Shift"
             title="Before → After"
             id="before-after-heading"
-            description="Qualitative shifts we help clients make—no generic metrics."
+            description="The kind of change we help clients make—concrete, not vague."
           />
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             {[
               {
-                before: "Decisions wait on spreadsheets and tribal knowledge. Leadership is in the weeds.",
+                before: "Decisions wait on spreadsheets and tribal knowledge. Leadership is stuck in the weeds.",
                 after: "Clear metrics and ownership. Leadership focuses on strategy; operators own execution.",
               },
               {
-                before: "Cost and performance are opaque. Surprises show up late.",
-                after: "Visibility into cost drivers, variance, and risk. Issues surface early with clear owners.",
+                before: "Cost and performance are opaque. Surprises show up when it’s too late.",
+                after: "Visibility into cost drivers, variance, and risk. Issues surface early with someone accountable.",
               },
               {
                 before: "Growth means more firefighting. Processes don’t scale.",
-                after: "Operating model and playbooks that scale. New volume doesn’t mean reinventing the wheel.",
+                after: "Operating model and playbooks that scale. More volume doesn’t mean reinventing the wheel.",
               },
             ].map((item, i) => (
               <div key={i} className="border border-border p-6">
@@ -673,10 +673,10 @@ export default function OperationsPage() {
       >
         <div className="container-padding">
           <SectionHeader
-            label="Framework"
-            title="The Ironvael Operating System"
+            label="How we think"
+            title="Four pillars we design around"
             id="operating-system-heading"
-            description="Four pillars that guide how we design and improve operations."
+            description="Visibility, accountability, discipline, improvement—the basis of how we design and improve operations."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {OPERATING_SYSTEM_PILLARS.map((pillar, i) => (
@@ -702,9 +702,9 @@ export default function OperationsPage() {
         <div className="container-padding">
           <SectionHeader
             label="Deliverables"
-            title="Tangible outputs."
+            title="What you get on the page."
             id="deliverables-heading"
-            description="What we produce—advisory and design; we do not provide ongoing bookkeeping or HR outsourcing."
+            description="Advisory and design outputs—we don’t do bookkeeping, accounting, or HR outsourcing."
           />
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 mt-12 max-w-4xl">
             <ul className="space-y-3 text-muted-foreground">
@@ -754,39 +754,39 @@ export default function OperationsPage() {
           <div className="mt-12">
             <FAQItem
               question="What does Ironvael do versus our internal ops team?"
-              answer="We advise, design, and support implementation. Your team owns execution. We bring structure, analytics, and cross-industry perspective; we do not replace your operators or run your operations day to day."
+              answer="We advise, design, and support implementation. Your team owns execution. We bring structure, analytics, and cross-industry perspective—we don’t replace your operators or run ops day to day."
             />
             <FAQItem
               question="Do you provide bookkeeping or accounting services?"
-              answer="No. We do not provide bookkeeping, accounting, or financial statement preparation. We focus on operations design, process improvement, and performance management. Your finance and accounting functions remain with your team or your accountant."
+              answer="No. We don’t do bookkeeping, accounting, or financial statement prep. We focus on operations design, process improvement, and performance management. Finance and accounting stay with your team or your accountant."
             />
             <FAQItem
               question="Do you provide HR outsourcing or payroll?"
-              answer="No. We do not provide HR outsourcing, payroll, or benefits administration. We may advise on org design, roles, and accountability as part of an operations engagement, but HR operations stay with your organization or your HR provider."
+              answer="No. We don’t do HR outsourcing, payroll, or benefits. We may advise on org design and accountability as part of an ops engagement; HR operations stay with you or your HR provider."
             />
             <FAQItem
               question="How long do engagements typically take?"
-              answer="Project-based work often runs from a few weeks to several months depending on scope. Retainer and operating-partner arrangements are ongoing with initial terms typically in the 6–12 month range."
+              answer="Projects run from a few weeks to several months depending on scope. Retainers and operating-partner arrangements are ongoing; initial terms are usually 6–12 months."
             />
             <FAQItem
               question="What do you need from us to get started?"
-              answer="We typically start with a call to understand your situation, priorities, and constraints. From there we propose scope and deliverables. Access to key operators and relevant data is helpful once we are under way but not required for the first conversation."
+              answer="A call to understand your situation, priorities, and constraints. We then propose scope and deliverables. Key operators and data help once we’re under way; they’re not required for the first conversation."
             />
             <FAQItem
               question="How is pricing structured?"
-              answer="We use fixed-fee project scopes or monthly retainers so you have predictable cost. Specific pricing depends on scope and is outlined in a proposal after we discuss your needs."
+              answer="Fixed-fee project scopes or monthly retainers so cost is predictable. Specific pricing is in the proposal after we discuss your needs."
             />
             <FAQItem
               question="Do you work with companies outside our region?"
-              answer="Yes. We work with clients nationwide and can coordinate remotely. On-site work can be arranged when it adds value."
+              answer="Yes. We work nationwide and coordinate remotely. We do on-site when it adds value."
             />
             <FAQItem
               question="What if we only need a one-off diagnostic?"
-              answer="We can scope a discrete diagnostic—e.g., supply chain health, procurement opportunity, or process review—with a fixed fee and clear deliverables and timeline."
+              answer="We can scope a discrete diagnostic—supply chain health, procurement opportunity, process review—with a fixed fee and clear deliverables and timeline."
             />
             <FAQItem
               question="Can you help with implementation?"
-              answer="We support implementation through rollout planning, change management, and capability transfer. We do not take over ongoing execution; we equip your team to own it."
+              answer="Yes. We support implementation with rollout planning, change management, and capability transfer. We don’t take over execution; we equip your team to own it."
             />
           </div>
           <div className="mt-12 p-6 border border-border bg-background">
@@ -810,7 +810,7 @@ export default function OperationsPage() {
                 Start a conversation.
               </h2>
               <p className="text-white/80 text-lg max-w-xl leading-relaxed">
-                Whether you have a discrete project or want ongoing operations support, we begin with a no-obligation call to understand your priorities and options.
+                One project or ongoing support—we start with a call to understand your priorities and options. No obligation.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="min-h-[44px] inline-flex items-center">
@@ -822,10 +822,10 @@ export default function OperationsPage() {
                   </Button>
                 </Link>
                 <a
-                  href="#overview"
+                  href="#snapshot"
                   className="min-h-[44px] inline-flex items-center justify-center rounded-none border border-white/40 text-white hover:bg-white/10 px-6 h-12 text-sm font-medium"
                 >
-                  Request an operations diagnostic
+                  See the diagnostic
                 </a>
               </div>
             </div>
