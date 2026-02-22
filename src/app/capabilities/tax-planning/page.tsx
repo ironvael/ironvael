@@ -110,60 +110,34 @@ export default function TaxPlanningPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* Hero — dark */}
+      {/* Hero */}
       <section
         id="overview"
-        className="bg-primary text-white pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 scroll-mt-24"
+        className="relative text-white pt-24 sm:pt-28 md:pt-32 pb-[26px] sm:pb-[42px] md:pb-[58px] lg:pb-[74px] scroll-mt-24 overflow-hidden flex flex-col justify-end min-h-[60vh]"
         aria-labelledby="hero-heading"
       >
-        <div className="container-padding">
-          <div className="grid lg:grid-cols-[1fr,380px] gap-10 lg:gap-12 items-start">
-            <div className="space-y-6">
-              <h1
-                id="hero-heading"
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight"
-              >
-                Tax planning that supports strategy.
-              </h1>
-              <p className="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Corporate tax strategy, M&A structuring, and entity design—aligned with your operations and coordinated with your CPA and counsel.
-              </p>
-              <ul className="space-y-2 text-white/90">
-                {[
-                  "Effective tax rate and cash tax optimization",
-                  "M&A and transaction tax structuring",
-                  "Entity architecture and intercompany design",
-                  "Scenario modeling and decision support",
-                  "Incentive and credit identification",
-                  "Ongoing coordination with your advisors",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-white/60 mt-0.5">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Link href="/contact" className="min-h-[44px] inline-flex items-center">
-                  <Button
-                    size="lg"
-                    className="rounded-none bg-white text-primary hover:bg-white/90 px-6 h-12"
-                  >
-                    Start a conversation
-                  </Button>
-                </Link>
-                <a
-                  href="#final-cta"
-                  className="min-h-[44px] inline-flex items-center justify-center rounded-none border border-white/40 text-white hover:bg-white/10 px-6 h-12 text-sm font-medium"
-                >
-                  Request a tax strategy call
-                </a>
-              </div>
-            </div>
-            <div className="lg:sticky lg:top-28">
-              <LeadFormCard />
-            </div>
-          </div>
+        <div className="absolute inset-0 z-0 bg-primary">
+          <img
+            src="/tax-planning-hero.png"
+            alt=""
+            role="presentation"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container-padding relative z-10 flex flex-col items-center text-left">
+          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3 w-full max-w-3xl">
+            Capabilities
+          </p>
+          <h1
+            id="hero-heading"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight max-w-3xl w-full"
+          >
+            Tax Planning
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-white/90 max-w-2xl leading-relaxed w-full">
+            Corporate tax strategy, M&A structuring, and entity design—aligned with your operations and coordinated with your CPA and counsel.
+          </p>
         </div>
       </section>
 

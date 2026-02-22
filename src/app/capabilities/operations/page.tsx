@@ -13,7 +13,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import { Shield, MapPin, Users, Cpu, CheckCircle2, ChevronRight } from "lucide-react";
+import { Shield, MapPin, Users, Cpu, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const SUBNAV_LINKS = [
@@ -25,73 +25,6 @@ const SUBNAV_LINKS = [
   { href: "#process", label: "Process" },
   { href: "#deliverables", label: "Deliverables" },
   { href: "#faqs", label: "FAQs" },
-];
-
-const HERO_PILLS = [
-  {
-    id: "visibility",
-    label: "Visibility",
-    bullets: [
-      "Real-time view of cost, throughput, and bottlenecks",
-      "Single source of truth for operations metrics",
-      "Dashboards that drive decisions, not just reports",
-      "Clear line of sight from strategy to execution",
-      "Early warning on variance and risk",
-    ],
-    deliverables: [
-      "KPI and dashboard design",
-      "Data and metric governance",
-      "Visibility roadmap",
-    ],
-  },
-  {
-    id: "margin",
-    label: "Margin",
-    bullets: [
-      "Spend and cost driver analysis",
-      "Sourcing and procurement opportunity mapping",
-      "Process and waste reduction",
-      "Sustainable cost structure, not one-time cuts",
-      "Margin by product, channel, and customer",
-    ],
-    deliverables: [
-      "Cost and spend analysis",
-      "Sourcing strategy",
-      "Savings and efficiency plan",
-    ],
-  },
-  {
-    id: "execution",
-    label: "Execution",
-    bullets: [
-      "Process clarity and handoff discipline",
-      "Accountability and ownership by role",
-      "Routines that prevent firefighting",
-      "Implementation and rollout support",
-      "Capability transfer to your team",
-    ],
-    deliverables: [
-      "Process maps and workflows",
-      "Implementation plan",
-      "Handoff and training materials",
-    ],
-  },
-  {
-    id: "scale",
-    label: "Scale",
-    bullets: [
-      "Operating model that grows with you",
-      "Network and capacity planning",
-      "Resilience and risk mitigation",
-      "Systems and process that scale without reinvention",
-      "Clear playbook for the next stage",
-    ],
-    deliverables: [
-      "Operating model design",
-      "Scale and resilience assessment",
-      "Growth readiness plan",
-    ],
-  },
 ];
 
 const SNAPSHOT_CATEGORIES = [
@@ -292,7 +225,6 @@ function FAQItem({
 }
 
 export default function OperationsPage() {
-  const [activePill, setActivePill] = useState(HERO_PILLS[0].id);
   const [activeProcessStep, setActiveProcessStep] = useState(0);
   const processStepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -313,98 +245,38 @@ export default function OperationsPage() {
     return () => observer.disconnect();
   }, []);
 
-  const activePillData = HERO_PILLS.find((p) => p.id === activePill) ?? HERO_PILLS[0];
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* Hero with pill selector */}
+      {/* Hero */}
       <section
         id="overview"
-        className="bg-primary text-white pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 scroll-mt-24"
+        className="relative text-white pt-24 sm:pt-28 md:pt-32 pb-[26px] sm:pb-[42px] md:pb-[58px] lg:pb-[74px] scroll-mt-24 overflow-hidden flex flex-col justify-end min-h-[60vh]"
         aria-labelledby="hero-heading"
       >
-        <div className="container-padding">
-          <div className="grid lg:grid-cols-[1fr,380px] gap-10 lg:gap-12 items-start">
-            <div className="space-y-6">
-              <h1
-                id="hero-heading"
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight"
-              >
-                Operations that scale with your strategy.
-              </h1>
-              <p className="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Supply chain, procurement, and manufacturing excellence—built for efficiency, resilience, and sustainable cost advantage.
-              </p>
-
-              {/* Pill tabs */}
-              <div className="flex flex-wrap gap-2" role="tablist" aria-label="Focus area">
-                {HERO_PILLS.map((pill) => (
-                  <button
-                    key={pill.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={activePill === pill.id}
-                    onClick={() => setActivePill(pill.id)}
-                    className={cn(
-                      "px-4 py-2 text-sm font-medium transition-all duration-200 rounded-none border",
-                      activePill === pill.id
-                        ? "bg-white text-primary border-white"
-                        : "border-white/30 text-white/90 hover:border-white/50 hover:bg-white/5"
-                    )}
-                  >
-                    {pill.label}
-                  </button>
-                ))}
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-8 sm:gap-10">
-                <div className="transition-opacity duration-200">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">Focus areas</p>
-                  <ul className="space-y-2 text-white/90">
-                    {activePillData.bullets.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-white/60 mt-0.5">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="transition-opacity duration-200">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">Typical deliverables</p>
-                  <ul className="space-y-1.5 text-white/90">
-                    {activePillData.deliverables.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm">
-                        <ChevronRight className="h-4 w-4 text-white/60 shrink-0" aria-hidden />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Link href="/contact" className="min-h-[44px] inline-flex items-center">
-                  <Button
-                    size="lg"
-                    className="rounded-none bg-white text-primary hover:bg-white/90 px-6 h-12"
-                  >
-                    Start a conversation
-                  </Button>
-                </Link>
-                <a
-                  href="#final-cta"
-                  className="min-h-[44px] inline-flex items-center justify-center rounded-none border border-white/40 text-white hover:bg-white/10 px-6 h-12 text-sm font-medium"
-                >
-                  Request an operations diagnostic
-                </a>
-              </div>
-            </div>
-            <div className="lg:sticky lg:top-28">
-              <LeadFormCard idPrefix="ops-hero" />
-            </div>
-          </div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/operations-hero.jpg"
+            alt=""
+            role="presentation"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container-padding relative z-10 flex flex-col items-center text-left">
+          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3 w-full max-w-3xl">
+            Capabilities
+          </p>
+          <h1
+            id="hero-heading"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight max-w-3xl w-full"
+          >
+            Operations
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-white/90 max-w-2xl leading-relaxed w-full">
+            We transform operational performance through rigorous analysis, disciplined execution, and enterprise-grade solutions that deliver lasting results.
+          </p>
         </div>
       </section>
 

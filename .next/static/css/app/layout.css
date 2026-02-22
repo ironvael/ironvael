@@ -946,6 +946,12 @@ h1, h2, h3, h4, h5, h6 {
 .min-h-svh{
   min-height: 100svh;
 }
+.min-h-\[70vh\]{
+  min-height: 70vh;
+}
+.min-h-\[60vh\]{
+  min-height: 60vh;
+}
 .w-0{
   width: 0px;
 }
@@ -1233,6 +1239,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .items-stretch{
   align-items: stretch;
+}
+.justify-start{
+  justify-content: flex-start;
+}
+.justify-end{
+  justify-content: flex-end;
 }
 .justify-center{
   justify-content: center;
@@ -1556,6 +1568,9 @@ h1, h2, h3, h4, h5, h6 {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--primary) / var(--tw-bg-opacity, 1));
 }
+.bg-primary\/80{
+  background-color: hsl(var(--primary) / 0.8);
+}
 .bg-primary\/95{
   background-color: hsl(var(--primary) / 0.95);
 }
@@ -1796,11 +1811,26 @@ h1, h2, h3, h4, h5, h6 {
 .pt-\[max\(0\.75rem\2c env\(safe-area-inset-top\)\)\]{
   padding-top: max(0.75rem,env(safe-area-inset-top));
 }
+.pb-\[calc\(5rem\+96px\)\]{
+  padding-bottom: calc(5rem + 96px);
+}
+.pb-44{
+  padding-bottom: 11rem;
+}
+.pb-\[101px\]{
+  padding-bottom: 101px;
+}
+.pb-\[26px\]{
+  padding-bottom: 26px;
+}
 .text-left{
   text-align: left;
 }
 .text-center{
   text-align: center;
+}
+.text-right{
+  text-align: right;
 }
 .align-middle{
   vertical-align: middle;
@@ -3791,6 +3821,26 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 7rem;
   }
 
+  .sm\:pb-24{
+    padding-bottom: 6rem;
+  }
+
+  .sm\:pb-\[calc\(6rem\+96px\)\]{
+    padding-bottom: calc(6rem + 96px);
+  }
+
+  .sm\:pb-48{
+    padding-bottom: 12rem;
+  }
+
+  .sm\:pb-\[117px\]{
+    padding-bottom: 117px;
+  }
+
+  .sm\:pb-\[42px\]{
+    padding-bottom: 42px;
+  }
+
   .sm\:text-left{
     text-align: left;
   }
@@ -3997,6 +4047,26 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 8rem;
   }
 
+  .md\:pb-28{
+    padding-bottom: 7rem;
+  }
+
+  .md\:pb-\[calc\(7rem\+96px\)\]{
+    padding-bottom: calc(7rem + 96px);
+  }
+
+  .md\:pb-52{
+    padding-bottom: 13rem;
+  }
+
+  .md\:pb-\[133px\]{
+    padding-bottom: 133px;
+  }
+
+  .md\:pb-\[58px\]{
+    padding-bottom: 58px;
+  }
+
   .md\:text-left{
     text-align: left;
   }
@@ -4138,6 +4208,26 @@ h1, h2, h3, h4, h5, h6 {
   .lg\:py-32{
     padding-top: 8rem;
     padding-bottom: 8rem;
+  }
+
+  .lg\:pb-32{
+    padding-bottom: 8rem;
+  }
+
+  .lg\:pb-\[calc\(8rem\+96px\)\]{
+    padding-bottom: calc(8rem + 96px);
+  }
+
+  .lg\:pb-56{
+    padding-bottom: 14rem;
+  }
+
+  .lg\:pb-\[149px\]{
+    padding-bottom: 149px;
+  }
+
+  .lg\:pb-\[74px\]{
+    padding-bottom: 74px;
   }
 
   .lg\:text-2xl{

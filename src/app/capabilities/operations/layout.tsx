@@ -3,11 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Operations | Ironvael",
   description:
-    "Supply chain, procurement, and manufacturing excellence to drive efficiency, resilience, and sustainable cost advantage.",
+    "We transform operational performance through rigorous analysis, disciplined execution, and enterprise-grade solutions that deliver lasting results.",
   openGraph: {
     title: "Operations | Ironvael",
     description:
-      "Supply chain, procurement, and manufacturing excellence to drive efficiency, resilience, and sustainable cost advantage.",
+      "We transform operational performance through rigorous analysis, disciplined execution, and enterprise-grade solutions that deliver lasting results.",
   },
 };
 

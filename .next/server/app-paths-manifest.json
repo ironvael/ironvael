@@ -1,3 +1,8 @@
 {
+  "/capabilities/marketing-sales/page": "app/capabilities/marketing-sales/page.js",
+  "/capabilities/tax-planning/page": "app/capabilities/tax-planning/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/capabilities/entity-structuring/page": "app/capabilities/entity-structuring/page.js",
+  "/capabilities/ma/page": "app/capabilities/ma/page.js",
   "/capabilities/operations/page": "app/capabilities/operations/page.js"
 }
