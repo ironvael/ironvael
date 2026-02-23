@@ -1,7 +1,7 @@
 export const CAPABILITY_CATEGORIES = [
   {
     label: "Strategy & Transactions",
-    items: ["strategy", "transformation", "ma", "entity-formation"],
+    items: ["strategy", "transformation", "ma", "entity-structuring"],
   },
   {
     label: "Operations & Commercial",
@@ -38,8 +38,8 @@ export const CAPABILITIES = [
     description: "Due diligence, merger integration, and divestitures.",
   },
   {
-    slug: "entity-formation",
-    title: "Entity Formation",
+    slug: "entity-structuring",
+    title: "Entity Structuring",
     description: "Corporate structure design, venture setup, and legal entity optimization.",
   },
   {

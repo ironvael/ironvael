@@ -10,7 +10,7 @@ import Link from "next/link";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Ironvael | Business & Operations Consulting",
+  title: "Ironvael | Global Consulting Firm",
   description:
     "Business and operations consulting with entity structuring and compliance recovery. Built for operators who want durable systems and clean execution.",
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "operations consulting",
   ],
   openGraph: {
-    title: "Ironvael | Business & Operations Consulting",
+    title: "Ironvael | Global Consulting Firm",
     description:
       "We partner with leaders in business and society to tackle their most important challenges and capture their greatest opportunities.",
     url: "/",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ironvael | Business & Operations Consulting",
+    title: "Ironvael | Global Consulting Firm",
     description:
       "We partner with leaders in business and society to tackle their most important challenges and capture their greatest opportunities.",
   },
@@ -163,7 +163,7 @@ export default function Home() {
             <div>
               <SectionHeader
                 label="Industries"
-                title="Consulting built for real-world complexity."
+                title="Operations and advisory built for real-world complexity."
                 description="We support operators across multiple industries with practical operations consulting, strategic tax structuring (alongside your CPA/attorney), and compliance recovery."
                 light
                 id="industries"

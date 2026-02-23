@@ -1,9 +1,56 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Linkedin, Twitter, Facebook, ArrowUpRight } from "lucide-react";
+import { Linkedin, Twitter, Facebook, ArrowUpRight, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const { toast } = useToast();
+
+  async function handleNewsletterSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const value = email.trim().toLowerCase();
+    if (!value) return;
+    setStatus("loading");
+    setErrorMessage("");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: value }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMessage(data.message || "Something went wrong.");
+        toast({
+          title: "Signup failed",
+          description: data.message || "Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+      setStatus("success");
+      setEmail("");
+      toast({
+        title: "You're subscribed",
+        description: "We'll send our latest insights to your inbox.",
+      });
+    } catch {
+      setStatus("error");
+      setErrorMessage("Something went wrong.");
+      toast({
+        title: "Signup failed",
+        description: "Please try again.",
+        variant: "destructive",
+      });
+    }
+  }
+
   return (
     <footer className="bg-primary text-primary-foreground py-12 sm:py-16 lg:py-24">
       <div className="container-padding">
@@ -22,13 +69,13 @@ export function Footer() {
               Together, we achieve extraordinary results.
             </p>
             <div className="flex gap-3 pt-4">
-              <a href="#" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="LinkedIn">
+              <a href="https://linkedin.com/company/ironvael" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="Twitter">
+              <a href="https://x.com/ironvael" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="X (Twitter)">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61585578248745" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
@@ -39,7 +86,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/about" className="text-white/60 hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/careers" className="text-white/60 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-white/60 hover:text-white transition-colors">Offices</Link></li>
+              <li><Link href="/contact" className="text-white/60 hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/alumni" className="text-white/60 hover:text-white transition-colors">Alumni</Link></li>
             </ul>
           </div>
@@ -57,25 +104,51 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-3 space-y-4">
             <h4 className="font-serif text-base sm:text-lg">Subscribe</h4>
             <p className="text-white/60 text-sm">Get our latest insights delivered to your inbox.</p>
-            <div className="flex gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+              <label htmlFor="footer-newsletter-email" className="sr-only">
+                Email for newsletter
+              </label>
               <input
+                id="footer-newsletter-email"
                 type="email"
                 placeholder="Email address"
-                className="bg-white/5 border border-white/10 px-3 py-3 sm:py-2 text-sm w-full focus:outline-none focus:border-white/30 text-white placeholder:text-white/40 min-h-[44px]"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === "loading"}
+                className="bg-white/5 border border-white/10 px-3 py-3 sm:py-2 text-sm w-full focus:outline-none focus:border-white/30 text-white placeholder:text-white/40 min-h-[44px] disabled:opacity-60"
+                autoComplete="email"
+                aria-invalid={status === "error"}
+                aria-describedby={errorMessage ? "footer-newsletter-error" : undefined}
               />
-              <button className="bg-white text-primary px-4 py-3 sm:py-2 min-h-[44px] hover:bg-white/90 transition-colors shrink-0">
-                <ArrowUpRight className="h-4 w-4" />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="bg-white text-primary px-4 py-3 sm:py-2 min-h-[44px] hover:bg-white/90 transition-colors shrink-0 disabled:opacity-60 flex items-center justify-center"
+              >
+                {status === "loading" ? (
+                  <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                ) : (
+                  <ArrowUpRight className="h-4 w-4" />
+                )}
               </button>
-            </div>
+            </form>
+            {errorMessage && (
+              <p id="footer-newsletter-error" className="text-sm text-white/70">
+                {errorMessage}
+              </p>
+            )}
+            {status === "success" && (
+              <p className="text-sm text-white/80">Thanks for subscribing.</p>
+            )}
           </div>
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-          <p>© 2024 Ironvael Consulting. All rights reserved.</p>
+          <p>© 2024 Ironvael Operations. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
-            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>
