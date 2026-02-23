@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { storage } from "@/lib/storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
 
@@ -41,22 +40,7 @@ export async function POST(request: Request) {
       }
     }
 
-    // Save to DB when available (optional — don't fail the request if DB is misconfigured)
-    let message: { id: number; name: string; email: string; company: string | null; message: string; createdAt: Date };
-    try {
-      message = await storage.createContactMessage(input);
-    } catch (dbErr) {
-      console.error("Contact form: email was sent but DB save failed:", dbErr);
-      message = {
-        id: 0,
-        name: input.name,
-        email: input.email,
-        company: input.company ?? null,
-        message: input.message,
-        createdAt: new Date(),
-      };
-    }
-    return NextResponse.json(message, { status: 201 });
+    return NextResponse.json({ message: "Message sent successfully." }, { status: 201 });
   } catch (err) {
     if (err instanceof z.ZodError) {
       return NextResponse.json(
