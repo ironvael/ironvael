@@ -1,8 +1,0 @@
-{
-  "/contact/page": "app/contact/page.js",
-  "/page": "app/page.js",
-  "/cookies/page": "app/cookies/page.js",
-  "/privacy/page": "app/privacy/page.js",
-  "/terms/page": "app/terms/page.js",
-  "/capabilities/transformation/page": "app/capabilities/transformation/page.js"
-}
