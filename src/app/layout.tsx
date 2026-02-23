@@ -20,6 +20,7 @@ import { QueryClientProviderWrapper } from "@/components/providers/query-provide
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import ScrollToTop from "@/components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function RootLayout({
             <Toaster />
           </TooltipProvider>
         </QueryClientProviderWrapper>
+        <Analytics />
       </body>
     </html>
   );
