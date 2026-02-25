@@ -18,8 +18,14 @@ export function useCreateContactMessage() {
       });
 
       if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.message || "Failed to send message");
+        let message = "Failed to send message";
+        try {
+          const errorData = await res.json();
+          message = errorData?.message ?? message;
+        } catch {
+          // e.g. 404 returns HTML
+        }
+        throw new Error(message);
       }
 
       return api.contact.create.responses[201].parse(await res.json());
