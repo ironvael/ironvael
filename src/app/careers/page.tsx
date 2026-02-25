@@ -172,7 +172,7 @@ export default function Careers() {
                 operations consulting
               </Link>
               ,{" "}
-              <Link href="/capabilities/entity-formation" className="text-primary font-medium hover:underline">
+              <Link href="/capabilities/entity-structuring" className="text-primary font-medium hover:underline">
                 entity structuring
               </Link>
               ,{" "}

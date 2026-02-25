@@ -32,7 +32,7 @@ export function HeroSection() {
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1]">
             Strategic Business <br />
-            <span className="text-white/90 italic">Consulting & Advisory.</span>
+            <span className="text-white/90 italic">Operations & Advisory.</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl font-light leading-relaxed">
             Operations consulting, entity structuring, and compliance recovery—built to help operators scale with clarity, control, and durable execution.

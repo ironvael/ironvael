@@ -17,6 +17,7 @@ export default function MarketingSalesPage() {
   return (
     <CapabilityPageLayout
       title="Marketing & Sales"
+      heroImage="/marketing-hero.png"
       description="Customer insights, pricing strategy, and sales force effectiveness to grow revenue and deepen market position."
       highlights={[
         {
