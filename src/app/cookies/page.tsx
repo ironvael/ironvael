@@ -29,70 +29,197 @@ export default function CookiesPage() {
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container-padding max-w-3xl">
           <div className="prose prose-neutral max-w-none space-y-10 text-muted-foreground">
+
             <p className="text-base leading-relaxed">
-              This Cookie Policy explains what cookies are, how Ironvael Operations (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) uses them on this website, and your choices.
+              This Cookie Policy explains how Ironvael Operations ("Ironvael,"
+              "we," "us," or "our") uses cookies and similar technologies when
+              you visit our website (the "Site"). It explains what these
+              technologies are, why we use them, and the choices you have.
             </p>
 
             <div>
-              <h2 className="text-xl font-serif font-bold text-primary mb-3">What are cookies?</h2>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                What are cookies?
+              </h2>
               <p>
-                Cookies are small text files that a website stores on your device (computer, tablet, or phone) when you visit. They are widely used to make sites work properly, remember preferences, and understand how visitors use the site.
+                Cookies are small text files placed on your device when you
+                visit a website. They allow a website to recognize your device,
+                remember preferences, maintain session information, and help
+                improve how the site functions.
+              </p>
+              <p className="mt-3">
+                Cookies may be stored temporarily (session cookies) or for a
+                longer period (persistent cookies).
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-serif font-bold text-primary mb-3">Cookies we use</h2>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                Cookies we use
+              </h2>
+
               <p className="mb-3">
-                We use only what is necessary to run the site and provide the services you request:
+                We use only limited cookies and similar technologies necessary
+                to operate and improve the Site.
               </p>
+
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  <strong className="text-foreground">Strictly necessary.</strong> These cookies are essential for the website to function—for example, to maintain your session or security. They cannot be switched off in our systems.
+                  <strong className="text-foreground">Strictly necessary
+                  cookies.</strong> These cookies are required for core
+                  functionality such as maintaining sessions, protecting the
+                  security of the site, and enabling basic features like form
+                  submissions.
                 </li>
+
                 <li>
-                  <strong className="text-foreground">Functional.</strong> These cookies enable features such as remembering preferences (e.g. form state) so we can improve how the site works for you.
+                  <strong className="text-foreground">Functional
+                  cookies.</strong> These cookies allow the Site to remember
+                  certain preferences or states (for example, form data during a
+                  session) in order to improve usability.
                 </li>
               </ul>
+
               <p className="mt-3">
-                We do not use advertising or third-party tracking cookies on this site. We do not sell data collected via cookies.
+                We do not currently use advertising cookies or third-party
+                behavioral tracking cookies on this Site. We do not sell
+                personal information collected via cookies.
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-serif font-bold text-primary mb-3">Managing cookies</h2>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                Similar technologies
+              </h2>
+
+              <p className="mb-3">
+                In addition to cookies, we may use browser storage technologies
+                such as local storage or session storage.
+              </p>
+
               <p>
-                Most browsers let you control cookies through their settings. You can usually block or delete cookies via your browser&apos;s &quot;Privacy&quot; or &quot;Settings&quot; options. Blocking strictly necessary cookies may affect how the site works (for example, some forms or features may not function correctly).
+                For example, on certain pages (such as our diagnostic request
+                form), we may store contextual information like referral source
+                or UTM parameters associated with a link you clicked. This helps
+                us understand which outreach or campaigns led you to the Site
+                and helps our team prepare for conversations.
+              </p>
+
+              <p className="mt-3">
+                This information is stored locally in your browser and can be
+                removed at any time by clearing your browser’s site data.
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-serif font-bold text-primary mb-3">Updates</h2>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                Third-party services
+              </h2>
+
               <p>
-                We may update this Cookie Policy from time to time to reflect changes in our practices or the law. The &quot;Last updated&quot; date below will change when we do. We encourage you to review this page periodically.
+                Some third-party services we use to operate the Site—such as
+                hosting providers, scheduling tools, email delivery providers,
+                or analytics services—may set or access cookies or similar
+                technologies as part of their functionality.
+              </p>
+
+              <p className="mt-3">
+                These services operate under their own privacy and cookie
+                policies. Ironvael does not control how third parties use their
+                technologies.
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-serif font-bold text-primary mb-3">Contact</h2>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                Managing cookies
+              </h2>
+
               <p>
-                Questions about our use of cookies? Contact us at{" "}
-                <a href="mailto:inquiries@ironvael.com" className="text-primary font-medium hover:underline">inquiries@ironvael.com</a> or{" "}
-                <a href="tel:+14062194294" className="text-primary font-medium hover:underline">(406) 219-4294</a>.
+                Most web browsers allow you to control cookies through browser
+                settings. You can usually block or delete cookies through your
+                browser’s privacy settings.
+              </p>
+
+              <p className="mt-3">
+                Please note that disabling certain cookies may affect the
+                functionality of the Site. Some features—such as forms or
+                scheduling functionality—may not work properly without them.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                Do Not Track signals
+              </h2>
+
+              <p>
+                Some browsers include a “Do Not Track” (DNT) feature that
+                signals to websites that you do not want to be tracked. Because
+                there is currently no consistent industry standard for
+                responding to DNT signals, our Site does not currently respond
+                to those signals.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                Changes to this policy
+              </h2>
+
+              <p>
+                We may update this Cookie Policy from time to time to reflect
+                changes in our practices or legal requirements. When we do, the
+                “Last updated” date below will be revised.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-serif font-bold text-primary mb-3">
+                Contact
+              </h2>
+
+              <p>
+                If you have questions about this Cookie Policy or our use of
+                cookies, you can contact us at:
+              </p>
+
+              <p className="mt-2">
+                <a
+                  href="mailto:inquiries@ironvael.com"
+                  className="text-primary font-medium hover:underline"
+                >
+                  inquiries@ironvael.com
+                </a>
+                <br />
+                <a
+                  href="tel:+14062194294"
+                  className="text-primary font-medium hover:underline"
+                >
+                  (406) 219-4294
+                </a>
               </p>
             </div>
 
             <p className="text-sm text-muted-foreground pt-4 border-t border-border">
-              Last updated: February 2025
+              Last updated: March 3, 2026
             </p>
+
           </div>
         </div>
       </section>
 
       <section className="py-8 border-t border-border">
         <div className="container-padding max-w-3xl flex flex-wrap gap-6 justify-center">
-          <Link href="/privacy" className="text-primary font-medium hover:underline">Privacy Policy</Link>
-          <Link href="/terms" className="text-primary font-medium hover:underline">Terms of Use</Link>
-          <Link href="/contact" className="text-primary font-medium hover:underline">Contact us</Link>
+          <Link href="/privacy" className="text-primary font-medium hover:underline">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="text-primary font-medium hover:underline">
+            Terms of Use
+          </Link>
+          <Link href="/contact" className="text-primary font-medium hover:underline">
+            Contact us
+          </Link>
         </div>
       </section>
 
