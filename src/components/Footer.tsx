@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Linkedin, Twitter, Facebook, ArrowUpRight, Loader2 } from "lucide-react";
+import { Linkedin, Twitter, Facebook, ArrowUpRight, Loader2, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export function Footer() {
@@ -69,13 +69,13 @@ export function Footer() {
               Together, we achieve extraordinary results.
             </p>
             <div className="flex gap-3 pt-4">
-              <a href="https://linkedin.com/company/ironvael" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="LinkedIn">
+              <a href="https://linkedin.com/company/ironvael-advisory" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://x.com/ironvael" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="X (Twitter)">
-                <Twitter className="h-5 w-5" />
+              <a href="https://instagram.com/ironvaeladvisory" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="X (Twitter)">
+                <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61585578248745" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61580604974061" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
