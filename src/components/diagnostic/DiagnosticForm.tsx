@@ -103,7 +103,7 @@ export function DiagnosticForm({ calUrl }: DiagnosticFormProps) {
             size="lg"
             className="w-full sm:w-auto rounded-none px-8 h-11 text-sm font-semibold"
           >
-            <a href={calUrl} target="_blank" rel="noreferrer">
+            <a href="https://cal.com/ironvael-advisory/stability" target="_blank" rel="noreferrer">
               Schedule now
             </a>
           </Button>
