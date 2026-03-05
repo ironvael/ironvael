@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 export const dynamic = "force-dynamic";
 
@@ -91,6 +92,7 @@ export default function RootLayout({
             <Toaster />
           </TooltipProvider>
         </QueryClientProviderWrapper>
+        <Analytics />
       </body>
     </html>
   );
