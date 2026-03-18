@@ -10,7 +10,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  ArrowRight,
   Hammer,
   Target,
   Eye,
@@ -24,12 +23,8 @@ import Link from "next/link";
 
 const CAREERS_EMAIL = "careers@ironvael.com";
 
-const OPEN_ROLES = [
-  { title: "Operations Consultant", location: "Remote / US", type: "Full-time", example: true },
-  { title: "Client Operations Manager", location: "Remote / US", type: "Full-time", example: true },
-  { title: "Research & Insights Analyst", location: "Remote / US", type: "Full-time", example: true },
-  { title: "Executive Assistant / Ops Coordinator", location: "Remote / US", type: "Full-time or Contract", example: true },
-];
+// No open roles at the moment. Check back or reach out to express interest for future opportunities.
+const OPEN_ROLES: { title: string; location: string; type: string }[] = [];
 
 const WHY_PILLARS = [
   { icon: Hammer, title: "Craft", desc: "We build systems and structures that last.", support: "Detail-oriented execution, not slide decks." },
@@ -85,11 +80,11 @@ function buildApplyMailto(roleTitle: string): string {
 export const metadata: Metadata = {
   title: "Careers | Ironvael",
   description:
-    "Careers at Ironvael. Build enduring systems for serious operators. Operations consulting, entity structuring, tax planning, compliance recovery.",
+    "Careers at Ironvael. We're not currently hiring, but we welcome interest for future opportunities. Build enduring systems for serious operators.",
   openGraph: {
     title: "Careers | Ironvael",
     description:
-      "Careers at Ironvael. Build enduring systems for serious operators. Operations consulting, entity structuring, tax planning, compliance recovery.",
+      "Careers at Ironvael. We're not currently hiring, but we welcome interest for future opportunities. Build enduring systems for serious operators.",
   },
 };
 
@@ -113,7 +108,7 @@ export default function Careers() {
         <div className="container-padding">
           <div className="max-w-3xl space-y-6">
             <span className="inline-block py-1.5 px-3 border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium tracking-wide uppercase">
-              Join the team
+              We&apos;re not currently hiring
             </span>
             <h1 id="careers-hero-title" className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white leading-tight">
               Careers at Ironvael
@@ -123,11 +118,11 @@ export default function Careers() {
             </p>
             <p className="text-sm text-white/60">Flexible, execution-focused teams. No fluff.</p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="#open-roles" className="min-h-[44px] inline-flex">
+              <a href={"mailto:" + CAREERS_EMAIL + "?subject=Future%20opportunities"} className="min-h-[44px] inline-flex" aria-label="Email careers">
                 <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 rounded-none px-6 sm:px-8 h-12 sm:h-14 text-base">
-                  View open roles
+                  Get in touch for future opportunities
                 </Button>
-              </Link>
+              </a>
               <Link href="#hiring-process" className="min-h-[44px] inline-flex">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-white/10 hover:text-white rounded-none px-6 sm:px-8 h-12 sm:h-14 text-base">
                   How we hire
@@ -207,35 +202,45 @@ export default function Careers() {
               <h2 id="open-roles-title" className="text-2xl sm:text-3xl font-serif font-bold text-primary">
                 Open roles
               </h2>
-              <p className="text-muted-foreground mt-2 text-sm">Current openings. Examples listed for illustration.</p>
+              <p className="text-muted-foreground mt-2 text-sm">We are not actively hiring at the moment.</p>
             </div>
           </div>
-          <div className="space-y-4">
-            {OPEN_ROLES.map((role, i) => (
-              <Card key={i} className="border border-border hover:border-primary/50 transition-colors rounded-none">
-                <CardContent className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h3 className="text-xl font-serif font-bold text-primary">{role.title}</h3>
-                      {role.example && (
-                        <span className="text-xs uppercase tracking-wider text-muted-foreground bg-secondary px-2 py-0.5">
-                          Example
-                        </span>
-                      )}
+          {OPEN_ROLES.length > 0 ? (
+            <div className="space-y-4">
+              {OPEN_ROLES.map((role, i) => (
+                <Card key={i} className="border border-border hover:border-primary/50 transition-colors rounded-none">
+                  <CardContent className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl font-serif font-bold text-primary mb-1">{role.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {role.location} | {role.type}
+                      </p>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      {role.location} | {role.type}
-                    </p>
-                  </div>
-                  <a href={buildApplyMailto(role.title)} className="shrink-0" aria-label={"Apply for " + role.title}>
-                    <Button size="default" className="rounded-none min-h-[44px] px-6">
-                      Apply
-                    </Button>
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <a href={buildApplyMailto(role.title)} className="shrink-0" aria-label={"Apply for " + role.title}>
+                      <Button size="default" className="rounded-none min-h-[44px] px-6">
+                        Apply
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <Card className="border border-border rounded-none">
+              <CardContent className="p-8 sm:p-10 text-center">
+                <Briefcase className="h-12 w-12 mx-auto text-muted-foreground mb-4" aria-hidden />
+                <p className="text-muted-foreground mb-4">
+                  We&apos;re not hiring at the moment, but we always want to hear from people who might be a fit for future openings. Reach out to express interest.
+                </p>
+                <a href={"mailto:" + CAREERS_EMAIL + "?subject=Future%20opportunities"} className="inline-flex" aria-label="Email careers">
+                  <Button size="lg" className="rounded-none">
+                    <Mail className="mr-2 h-4 w-4" />
+                    Get in touch
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          )}
         </div>
       </section>
 
@@ -313,16 +318,14 @@ export default function Careers() {
           <h2 id="final-cta-title" className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-white">
             Build work that lasts.
           </h2>
+          <p className="text-white/80 text-sm sm:text-base">
+            We&apos;re not hiring right now, but reach out to express interest for future opportunities.
+          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="#open-roles" className="min-h-[44px] inline-flex">
+            <a href={"mailto:" + CAREERS_EMAIL + "?subject=Future%20opportunities"} className="min-h-[44px] inline-flex" aria-label="Email careers">
               <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 rounded-none px-8 sm:px-10 h-12 sm:h-14 text-base">
-                View open roles
-              </Button>
-            </Link>
-            <a href={"mailto:" + CAREERS_EMAIL + "?subject=Recruiting%20inquiry"} className="min-h-[44px] inline-flex" aria-label="Email recruiting">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-white/10 hover:text-white rounded-none px-8 sm:px-10 h-12 sm:h-14 text-base">
                 <Mail className="mr-2 h-4 w-4" />
-                Email recruiting
+                Get in touch
               </Button>
             </a>
           </div>
