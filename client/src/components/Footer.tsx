@@ -68,7 +68,7 @@ export function Footer() {
         </div>
         
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-          <p>© 2024 Ironvael Operations. All rights reserved.</p>
+          <p>© 2026 Ironvael Advisory. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
